@@ -1,0 +1,56 @@
+.certificate-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.3s;
+}
+
+.certificate-card:hover {
+    opacity: 0.5;
+}
+
+.cert-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 16px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 2;
+}
+
+.certificate-card:hover .cert-overlay {
+    opacity: 1;
+}
+
+.cert-btn {
+    border: none;
+    padding: 10px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    color: #fd7e1464;
+    transition: transform 0.2s;
+}
+
+.cert-btn:hover {
+    transform: scale(1.1);
+}
+
+.cert-btn.edit {
+    background-color: #28a745;
+    color: #28a745;
+}
+
+.cert-btn.delete {
+    background-color: #fd7e14;
+    color: #fd7e14;
+}

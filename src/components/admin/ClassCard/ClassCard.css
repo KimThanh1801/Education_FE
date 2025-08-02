@@ -1,0 +1,116 @@
+.class-card {
+  width: 290px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.class-card__banner {
+  height: 100px;
+  overflow: hidden;
+}
+
+.class-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.class-card__avatar {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  position: absolute;
+  top: 70px;
+  right: 16px;
+  z-index: 2;
+  background-color: white;
+}
+
+.class-card__content {
+  padding: 24px 16px 0px 16px;
+  text-align: left;
+  position: relative;
+}
+
+.class-card__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.class-card__teacher {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.class-card__description {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.class-card__footer {
+  padding: 4px 12px;
+  border-top: 1px solid #eee;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.class-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.class-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/*  */
+.class-card__actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.class-card__icon {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.class-card:hover .class-card__actions {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.class-card__icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}

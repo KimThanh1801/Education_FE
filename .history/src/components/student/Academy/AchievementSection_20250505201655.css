@@ -1,0 +1,38 @@
+.achievement-wrapper {
+    background: #fff;
+    padding: 24px;
+    border: 2px solid #00aaff22;
+    border-radius: 12px;
+    margin: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.achievement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.achievement-header h2 {
+    color: #1d3557;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.add-btn {
+    background-color: #ffa500;
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}

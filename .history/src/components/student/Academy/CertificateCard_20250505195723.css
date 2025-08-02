@@ -1,0 +1,27 @@
+.certificate-card {
+    width: 240px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+}
+
+.cert-img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.cert-title {
+    color: orange;
+    font-weight: bold;
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+.cert-desc {
+    color: #333;
+    font-size: 14px;
+    margin-top: 6px;
+}

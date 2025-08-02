@@ -1,0 +1,91 @@
+.yourGoall {
+  max-width: 1000px;      
+  margin: 0 auto;          
+  display: block;          
+  padding-top: 20px;  
+       
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  width: 123%;           
+  margin: 0 auto;       
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.table thead tr th {
+  background-color: rgba(255, 153, 51, 0.8) !important;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;     /* Căn giữa tiêu đề */
+  vertical-align: middle; /* Căn giữa theo chiều dọc */
+}
+
+.table th, 
+.table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  white-space: nowrap;
+  text-align: center;      /* Căn giữa nội dung */
+  vertical-align: middle;  /* Căn giữa theo chiều dọc */
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: rgba(245, 245, 245, 0.8);
+}
+
+
+.goal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;   
+  position: relative;        
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.add-goal-btn {
+  position: absolute;      
+  right: 0;                 
+  top: 50%;                
+  transform: translateY(-50%);
+}
+
+.icon_add {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+/* .add-goal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 153, 51, 0.8);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+} */
+
+.add-goal-btn:hover {
+  background-color: rgba(255, 153, 51, 1);
+}

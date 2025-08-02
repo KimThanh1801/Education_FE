@@ -1,0 +1,202 @@
+.student-management {
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-top: 50px;
+  margin-left: 220px;
+}
+
+.student-management h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.add-student-btn {
+  display: flex;
+  justify-content: flex-start;
+    margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.add-student-btn button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s;
+}
+
+.add-student-btn button:hover {
+  background-color: #218838;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  background-color: white;
+}
+
+.student-table th,
+.student-table td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.student-table th {
+  background-color: #f1f1f1;
+  color: #444;
+  font-weight: 600;
+}
+
+.student-table tr:hover {
+  background-color: #fdfdfd;
+}
+
+.student-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.action-buttons button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.action-buttons button:hover {
+  background-color: #eaeaea;
+}
+
+.action-buttons .edit {
+  color: #007bff;
+}
+
+.action-buttons .delete {
+  color: #dc3545;
+}
+
+h2 {
+    margin: none;
+}
+
+.add-student-form-container {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  z-index: 999;
+}
+
+.add-student-form-container form {
+  max-width: 100%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.add-student-form-container {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  padding: 24px 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 360px;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.add-student-form-container form .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.add-student-form-container form input,
+.add-student-form-container form .ant-upload {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.add-student-form-container .ant-btn-primary {
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.add-student-btn button {
+  position: absolute;
+  padding: 12px 16px;
+  background-color: #ef8607;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+
+.add-student-btn button:hover {
+  background-color: #ff8c00;
+}
+
+.add-student-btn button img {
+  color: rgb(0, 0, 0);
+}

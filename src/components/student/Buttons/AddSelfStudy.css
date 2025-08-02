@@ -1,0 +1,200 @@
+/* Self Study Modal Styles */
+.selfstudy-add-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .selfstudy-add-button:hover {
+    background-color: #3e8e41;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .selfstudy-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+  }
+  
+  .selfstudy-modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: selfstudy-modal-fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes selfstudy-modal-fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .selfstudy-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s;
+    line-height: 1;
+    padding: 5px;
+  }
+  
+  .selfstudy-close-button:hover {
+    color: #333;
+    transform: scale(1.1);
+  }
+  
+  .selfstudy-form {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+  
+  .selfstudy-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .selfstudy-form-section {
+    margin-bottom: 20px;
+  }
+  
+  .selfstudy-section-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #2c3e50;
+    font-weight: 600;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+  }
+  
+  .selfstudy-subsection-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #34495e;
+    font-weight: 500;
+  }
+  
+  .selfstudy-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border 0.3s;
+    background-color: #f9f9f9;
+  }
+  
+  .selfstudy-input:focus {
+    border-color: #3498db;
+    background-color: white;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52,152,219,0.2);
+  }
+  
+  .selfstudy-textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    min-height: 100px;
+    resize: vertical;
+    transition: all 0.3s;
+    background-color: #f9f9f9;
+    font-family: inherit;
+  }
+  
+  .selfstudy-textarea:focus {
+    border-color: #3498db;
+    background-color: white;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52,152,219,0.2);
+  }
+  
+  .selfstudy-date-input {
+    font-weight: bold;
+    color: #2c3e50;
+    background-color: #f0f0f0;
+  }
+  
+  .selfstudy-divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 30px 0;
+    border: none;
+  }
+  
+  .selfstudy-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+  }
+  
+  .selfstudy-cancel-button {
+    padding: 10px 25px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: all 0.3s;
+  }
+  
+  .selfstudy-cancel-button:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+  }
+  
+  .selfstudy-save-button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #3498db;
+    color: white;
+    transition: all 0.3s;
+  }
+  
+  .selfstudy-save-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }

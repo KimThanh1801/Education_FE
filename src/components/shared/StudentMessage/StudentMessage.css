@@ -1,0 +1,210 @@
+.student-chat-container {
+    position: relative;
+    height: 100vh;
+}
+
+.student-chat-toggle {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #2149cd;
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+.student-chat-toggle:hover {
+    background-color: #1e3a8a;
+    cursor: pointer;
+}
+
+.student-chat-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+}
+
+.student-chat-window {
+    position: fixed;
+    bottom: 5rem;
+    right: 1rem;
+    width: 28rem;
+    height: 500px;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.student-chat-header {
+    background-color: #1e40af;
+    color: white;
+    padding: 1rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.student-chat-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.student-chat-close {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.student-chat-close-icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.student-chat-close-icon::before,
+.student-chat-close-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 2px;
+    background-color: black;
+}
+
+.student-chat-close-icon::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.student-chat-close-icon::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.student-chat-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.student-chat-history {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #f9fafb;
+}
+
+.student-message-row {
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.student-message-row.admin-message {
+    justify-content: flex-start;
+}
+
+.student-message-row.student-message {
+    justify-content: flex-end;
+}
+
+.student-message-bubble {
+    max-width: 80%;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+}
+
+.student-message-bubble.admin-bubble {
+    background-color: #1d4ed8;
+    color: white;
+}
+
+.student-message-bubble.student-bubble {
+    background-color: #d1d5db;
+    color: black;
+}
+
+.student-message-time {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    opacity: 0.75;
+}
+
+.student-message-read {
+    font-size: 0.7rem;
+    color: green;
+    margin-top: 0.2rem;
+}
+
+.student-chat-input {
+    padding: 1rem;
+    display: flex;
+    border-top: 1px solid #d1d5db;
+    background-color: white;
+}
+
+.student-chat-form {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.student-input-textarea {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    resize: none;
+    min-height: 40px;
+    max-height: 60px;
+    outline: none;
+    place-content: center;
+}
+
+.student-input-textarea::placeholder {
+    color: #6b7280;
+}
+
+.student-send-button {
+    align-self: center;
+    width: 80px;
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.student-send-button:hover {
+    background-color: #1e3a8a;
+}
+
+.student-chat-empty {
+    padding: 1rem;
+    color: #6b7280;
+    text-align: center;
+}

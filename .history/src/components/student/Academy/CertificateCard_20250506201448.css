@@ -1,0 +1,42 @@
+.certificate-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.3s;
+}
+
+.certificate-card:hover {
+    opacity: 0.6;
+}
+
+.cert-overlay {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.certificate-card:hover .cert-overlay {
+    opacity: 1;
+}
+
+.cert-btn {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cert-btn:hover {
+    background-color: #eee;
+}

@@ -1,0 +1,35 @@
+input.form-control,
+select.form-control {
+  width: 90%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #FF9933;
+  font-size: 14px;
+  cursor: pointer;
+}
+select.form-control{
+  width: 95%;
+}
+.fa-caret-down::before {
+  content: none !important;
+}
+.goal-form .title {
+  font-size: 20px;
+margin-left: 10px;
+}
+.edit-your-goal{
+  margin-top: 20px;
+}
+
+.button-save{
+   margin-top: 20px;
+  max-height: 40px;
+  background-color: #FF9933;
+  border-radius: 10px;
+}
+.button-save:hover{
+   margin-top: 10px;
+  max-height: 40px;
+  background-color: #FF9933;
+  border-radius: 10px;
+}

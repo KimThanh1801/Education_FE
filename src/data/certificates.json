@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "My Certificate",
+        "description": "This is my certificate. I'm very proud of my certificate. It's a proof for my effort.",
+        "image": "https://via.placeholder.com/300x200.png?text=Certificate+1"
+    },
+    {
+        "id": 2,
+        "title": "ReactJS Course",
+        "description": "Completed a 40-hour ReactJS course from Udemy.",
+        "image": "https://via.placeholder.com/300x200.png?text=ReactJS+Certificate"
+    }
+]

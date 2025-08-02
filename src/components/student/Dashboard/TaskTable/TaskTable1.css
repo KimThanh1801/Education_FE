@@ -1,0 +1,49 @@
+/* .task-table {
+  width: 1200px;
+  font-size: 1rem;
+  border: 1px solid rgb(0, 170, 255);
+  border-spacing: 0;
+}
+
+.task-table thead {
+  background-color: rgb(255, 153, 0);
+  text-align: center;
+}
+
+.task-table th,
+.task-table td {
+  padding: 12px 16px;
+  border-top: 1px solid rgb(0, 170, 255);
+  text-align: left;
+}
+
+.task-table th {
+  font-weight: 600;
+  color: #fff;
+}
+
+.task-status {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-status.in-progress {
+  background-color: #FFEDD5;
+  color: #EA580C;
+}
+
+.task-status.completed {
+  background-color: #E0F7FA;
+  color: #00ACC1;
+}
+
+.task-status.to-do {
+  background-color: #F5F5F5;
+  color: #616161;
+}
+ */

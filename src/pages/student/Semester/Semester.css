@@ -1,0 +1,47 @@
+.yourGoal{
+  max-width: 1025px;
+  margin-left: 240px;
+}
+.table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.table {
+  width: 100%;
+  text-align: center;
+}
+.table thead tr th {
+  background-color: rgba(255, 153, 51, 0.8)!important;
+  color: #ffffff;
+}
+.table th{
+  font-weight: 600;
+}
+.table th,
+.table td {
+  width: 140px;
+  white-space: normal;
+  word-wrap: break-word; 
+  padding: 6px;
+  text-align: center;
+  font-size: 13px;
+}
+.goal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.table th, .table td {
+    width: 130px;
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 6px;
+    text-align: center;
+    font-size: 15px;
+    border: 1px solid #ccc; 
+}

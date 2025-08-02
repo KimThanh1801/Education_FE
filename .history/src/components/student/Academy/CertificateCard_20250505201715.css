@@ -1,0 +1,29 @@
+.certificate-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-4px);
+}
+
+.cert-img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.cert-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff7f00;
+    margin: 12px 0 4px 0;
+}
+
+.cert-desc {
+    font-size: 14px;
+    color: #444;
+    margin: 0;
+}

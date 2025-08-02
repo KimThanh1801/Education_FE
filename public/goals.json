@@ -1,0 +1,34 @@
+[
+  {
+    "course": "English",
+    "goal": "Improve speaking fluency",
+    "courseExpectations": "Participate in all speaking activities",
+    "teacherExpectations": "Provide constructive feedback weekly",
+    "selfExpectations": "Practice daily with language partners",
+    "dueDate": "2025-05-31"
+  },
+  {
+    "course": "IT-English",
+    "goal": "Understand technical documentation",
+    "courseExpectations": "Learn 50 new tech terms",
+    "teacherExpectations": "Give weekly vocabulary quizzes",
+    "selfExpectations": "Review documentation daily",
+    "dueDate": "2025-06-15"
+  },
+  {
+    "course": "Communicative",
+    "goal": "Build confidence in public speaking",
+    "courseExpectations": "Do 3 presentations",
+    "teacherExpectations": "Support and correct mistakes",
+    "selfExpectations": "Join speaking clubs weekly",
+    "dueDate": "2025-06-01"
+  },
+  {
+    "course": "English",
+    "goal": "Score 7.0 in IELTS Speaking",
+    "courseExpectations": "Cover all IELTS speaking topics",
+    "teacherExpectations": "Provide band scores and tips",
+    "selfExpectations": "Record and review my speaking",
+    "dueDate": "2025-07-10"
+  }
+]

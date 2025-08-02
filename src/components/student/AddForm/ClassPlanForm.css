@@ -1,0 +1,113 @@
+.form-container5 {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 60px;
+  width: 500px;
+  margin: 60px auto;
+}
+
+.form-container5 h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 15x;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.form-container5 h2+.form-row {
+  margin-top: 40px;
+}
+
+.form-container5 h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.form-group label {
+  margin-top: 5px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ffa94d;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s;
+  font-size: 14px;
+  height: px;
+  box-sizing: border-box;
+}
+.form-group textarea {
+  border: 1px solid #ffa94d !important;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #ffa94d;
+}
+
+.radio-group {
+  display: flex;
+  gap: 30px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #ffa94d;
+  cursor: pointer;
+}
+
+
+
+.form-container5 {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 400px;
+  margin: 60px auto;
+  max-height: 80vh;      
+  overflow-y: auto;      
+}
+/* (Tuỳ chọn) ✅ Làm đẹp thanh cuộn */
+.form-container5::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-container5::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
