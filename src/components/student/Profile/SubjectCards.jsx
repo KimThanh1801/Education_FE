@@ -51,7 +51,6 @@ const SubjectCards = () => {
 
   return (
     <div className="subjects-container">
-      <h2 className="subjects-title">Môn học của tôi</h2>
       <div className="subjects-grid">
         {subjects.map((subject) => (
           <div key={subject.id} className="subject-card">
