@@ -1,91 +1,578 @@
-.yourGoall {
-  max-width: 1000px;      
-  margin: 0 auto;          
-  display: block;          
-  padding-top: 20px;  
-       
+/* .study-goal-container {
+    margin-left: 240px;
+    padding: 0px 20px;
+    max-width: 1200px;
 }
 
-.table-wrapper {
-  overflow-x: auto;
-  margin-top: 20px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  background-color: #fff;
-  width: 123%;           
-  margin: 0 auto;       
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.study-goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
 }
 
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: center;
+.study-goal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
 }
-
-.table thead tr th {
-  background-color: rgba(255, 153, 51, 0.8) !important;
+.study-goal-thead tr th{
+  background-color: rgba(255, 153, 51, 0.8);
   color: #ffffff;
   font-weight: 600;
   padding: 12px;
-  border: 1px solid #ccc;
-  text-align: center;     /* Căn giữa tiêu đề */
-  vertical-align: middle; /* Căn giữa theo chiều dọc */
+  text-align: center;
 }
-
-.table th, 
-.table td {
-  padding: 12px;
-  border: 1px solid #ccc;
-  white-space: nowrap;
-  text-align: center;      /* Căn giữa nội dung */
-  vertical-align: middle;  /* Căn giữa theo chiều dọc */
+.study-goal-tbody tr td{
+  text-align: center;
 }
-
-.table tbody tr:nth-child(even) {
-  background-color: rgba(245, 245, 245, 0.8);
-}
-
-
-.goal-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;   
-  position: relative;        
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.add-goal-btn {
-  position: absolute;      
-  right: 0;                 
-  top: 50%;                
-  transform: translateY(-50%);
-}
-
-.icon_add {
-  width: 25px;
-  height: 25px;
+.add-button {
+  background-color: rgba(255, 153, 51, 1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
   cursor: pointer;
-}
-
-/* .add-goal-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 153, 51, 0.8);
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  color: white;
-  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+.add-button:hover {
+  background-color: rgba(255, 153, 51, 1);
+} 
+.study-goal-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.study-goal-table th {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: 600;
+  padding: 15px 12px;
+  text-align: left;
+  border-bottom: 2px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.study-goal-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: top;
+}
+
+.study-goal-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.study-goal-table tr:last-child td {
+  border-bottom: none;
+}
+
+.complete-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.complete-status:hover {
+  transform: scale(1.05);
+}
+
+.complete-yes {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.complete-no {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.complete-progress {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-btn {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.view-btn:hover {
+  background-color: #138496;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.due-date {
+  font-size: 13px;
+  color: #666;
+}
+
+.overdue {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-style: italic;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.pagination-btn {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #f8f9fa;
+  border-color: #007bff;
+}
+
+.pagination-btn.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination-btn:disabled {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+  border-color: #ddd;
+}
+
+@media (max-width: 768px) {
+  .study-goal-container {
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .study-goal-table {
+    font-size: 12px;
+  }
+  
+  .study-goal-table th,
+  .study-goal-table td {
+    padding: 8px 6px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .pagination {
+    flex-wrap: wrap;
+  }
 } */
 
-.add-goal-btn:hover {
+
+
+.study-goal-container {
+    margin-left: 240px;
+    padding: 0px 20px;
+    width: calc(100% - 240px); /* Thay max-width bằng width để luôn chiếm hết không gian */
+    box-sizing: border-box; /* Đảm bảo padding được tính trong width */
+}
+
+.study-goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.study-goal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.study-goal-thead tr th{
+  background-color: rgba(255, 153, 51, 0.8);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px;
+  text-align: center;
+}
+
+.study-goal-tbody tr td{
+  text-align: center;
+}
+
+.add-button {
   background-color: rgba(255, 153, 51, 1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: rgba(255, 153, 51, 0.8);
+}
+
+.study-goal-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.study-goal-table th {
+  background-color: rgba(255, 153, 51, 0.8); /* Sửa lại để match với thead */
+  color: #ffffff; /* Sửa lại để match với thead */
+  font-weight: 600;
+  padding: 15px 12px;
+  text-align: center; /* Sửa lại để match với thead */
+  border-bottom: 2px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.study-goal-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: top;
+  text-align: center; /* Sửa lại để match với tbody */
+}
+
+.study-goal-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.study-goal-table tr:last-child td {
+  border-bottom: none;
+}
+
+.complete-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.complete-status:hover {
+  transform: scale(1.05);
+}
+
+.complete-yes {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.complete-no {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.complete-progress {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.action-btn {
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-btn {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.view-btn:hover {
+  background-color: #138496;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.due-date {
+  font-size: 13px;
+  color: #666;
+}
+
+.overdue {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-style: italic;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.pagination-btn {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #f8f9fa;
+  border-color: rgba(255, 153, 51, 0.7);
+}
+
+.pagination-btn.active {
+  background-color: rgba(255, 153, 51, 0.9);
+  color: white;
+  border-color: rgba(255, 153, 51, 0.9);
+}
+
+.pagination-btn:disabled {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+  border-color: #ddd;
+}
+
+
+@media (min-width: 1400px) {
+  .study-goal-container {
+    padding: 0px 20px;
+    width: calc(100% - 240px);
+  }
+  
+  .study-goal-title {
+    font-size: 28px;
+  }
+  
+  .add-button {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+  
+  .study-goal-table th,
+  .study-goal-table td {
+    padding: 16px 14px;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .study-goal-container {
+    padding: 0px 25px;
+  }
+}
+
+/* Responsive Design cho tablet và mobile */
+@media (max-width: 991px) {
+  .study-goal-container {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .study-goal-container {
+    padding: 10px;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  .study-goal-table {
+    font-size: 12px;
+  }
+  
+  .study-goal-table th,
+  .study-goal-table td {
+    padding: 8px 6px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .pagination {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .study-goal-container {
+    padding: 8px;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  .study-goal-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .study-goal-title {
+    font-size: 18px;
+  }
+  
+  .add-button {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .study-goal-table {
+    font-size: 11px;
+  }
+  
+  .study-goal-table th,
+  .study-goal-table td {
+    padding: 6px 4px;
+  }
+  
+  .action-btn {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+  
+  .complete-status {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .study-goal-table {
+    min-width: 700px;
+  }
 }

@@ -2,8 +2,8 @@
     width: 100%;
     background-color: #ffffff; 
     padding: 20px 0;
-    margin-left: 40px;
-    margin-left: 20px;
+    /* margin-left: 40px;
+    margin-left: 20px; */
   }
   
   .header-container {
@@ -33,7 +33,7 @@
   .user-avatar {
     width: 32px;
     height: 32px;
-    background-color: #3b82f6; /* Blue-500 */
+    background-color: #3b82f6;
     color: white;
     font-weight: 600;
     display: flex;

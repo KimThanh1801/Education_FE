@@ -9,14 +9,27 @@ const api = axios.create({
     }
 })
 
+// api.interceptors.request.use((config) => {
+//     const token = getToken();
+//     console.log("Test token: ", token);
+//     if(token) {
+//         config.headers.Authorization = `Bearer ${token}`;
+//     }
+//     return config;
+// })
 api.interceptors.request.use((config) => {
     const token = getToken();
     console.log("Test token: ", token);
-    if(token) {
+
+    // Không thêm token cho các request login hoặc register
+    const isAuthRoute = config.url.includes('/login') || config.url.includes('/register');
+    if (!isAuthRoute && token) {
         config.headers.Authorization = `Bearer ${token}`;
     }
+
     return config;
-})
+});
+
 
 const USER_ROLES = {
   ADMIN: 'admin',
