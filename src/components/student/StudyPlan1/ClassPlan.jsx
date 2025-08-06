@@ -48,9 +48,9 @@ function ClassPlan() {
                 <td>{item.difficulties}</td>
                 <td>{item.improvement_plan}</td>
                 <td>{item.problem_solved}</td>
-                <td>
+                {/* <td>
                   <span className={`a-status ${item.problemSolved ? 'green' : 'red'}`}></span>
-                </td>
+                </td> */}
                 <Buttons type="class" inclass={item} />
               </tr>
             ))}

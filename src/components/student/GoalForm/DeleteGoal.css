@@ -2,28 +2,28 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 999;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .popup {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  width: 350px;
+  background-color: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
   text-align: center;
-  font-family: 'Arial', sans-serif;
 }
 
 .popup h3 {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-size: 18px;
+  color: #333;
 }
 
 .popup-buttons {
@@ -31,21 +31,43 @@
   justify-content: center;
   gap: 15px;
 }
-.popup-buttons{
-  display: flex;
-  gap:30px;
-}
-.btn-delete:first-child{
-  background-color: #FF9933;
-}
-.btn-delete{
-  max-width: 100px;
-  max-height: 100px;
+
+.btn-delete {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
+.btn-delete:first-child {
+  background-color: #FF0000;
+  color: white;
+}
 
+.btn-delete:first-child:hover {
+  background-color: #FF0000;
+  transform: scale(1.05);
+}
 
+.btn-delete:last-child {
+  background-color: #e0e0e0;
+  color: #333;
+}
 
-.btn-delete:last-child{
-  background-color: rgb(251, 12, 12);
+.btn-delete:last-child:hover {
+  background-color: #ccc;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

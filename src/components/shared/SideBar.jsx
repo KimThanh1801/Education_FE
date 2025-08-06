@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { sidebarItems, sidebarItemsAdmin, sidebarItemsTeacher  } from '../../assets/icons/sidebar';
 import { handleLogout } from '../../utils/swal';
 import { useAuth } from '../../services/providers/AuthContext';
+import { FaGraduationCap } from 'react-icons/fa'; 
 const Sidebar = () => {
   const {user} = useAuth();
   const itemsToRender = user?.role === 'admin'
@@ -13,7 +14,7 @@ const Sidebar = () => {
   return (
   <aside className="sidebar">
     <div className="sidebar-logo">
-      <span role="img" aria-label="logo">🎓</span>
+      <span role="img" aria-label="logo"><FaGraduationCap/></span>
     </div>
     <nav className="sidebar-nav">
     {itemsToRender.map((item) =>
