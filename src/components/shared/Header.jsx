@@ -1,11 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getStudents } from "../../services/api/StudentAPI";
 import "./Header.css";
 
 const Header = () => {
+  const [student, setStudent] = useState(null);
+
+  useEffect(() => {
+    const fetchStudent = async () => {
+      try {
+        const students = await getStudents();
+        if (students.length > 0) {
+          console.log("First student data:", students[0]);
+          setStudent(students[0]);
+        }
+      } catch (error) {
+        console.error("Error fetching student data:", error);
+      }
+    };
+
+    fetchStudent();
+  }, []);
+
+  const initials = student?.name
+    ? student.name
+        .split(" ")
+        .map((part) => part[0])
+        .join("")
+        .toUpperCase()
+    : "??";
+
   return (
     <header className="header">
       <div className="header-container">
-        {/* Header with user info */}
         <div className="user-info">
           <div className="user-info-inner">
             <div className="notification-icon">
@@ -24,23 +50,33 @@ const Header = () => {
                 ></path>
               </svg>
             </div>
-            <div className="user-avatar">CT</div>
-            <span className="user-name">Cô Trang</span>
-            {/* <div className="user-avatar">KT</div>
-            <span className="user-name">Kim Thanh</span> */}
+            <div className="user-avatar">
+              {student?.image ? (
+                <img
+                  src={student.image}
+                  alt="Avatar"
+                  className="avatar-img"
+                />
+              ) : (
+                initials
+              )}
+            </div>
+            <span className="user-name">{student?.name || "Loading..."}</span>
           </div>
         </div>
 
-        {/* Main Card */}
         <div className="welcome-card">
           <div className="welcome-text">
-            {/* <h1 className="welcome-title">Welcome back Kim Thanh</h1> */}
-            <h1 className="welcome-title">Welcome back Trang</h1>
+            <h1 className="welcome-title">
+              Welcome back {student?.name?.split(" ")[0] || "you"}!
+            </h1>
             <p className="welcome-info">
-              Today you have <span className="highlight">9 new applications</span>.
+              Today you have{" "}
+              <span className="highlight">9 new applications</span>.
             </p>
             <p className="welcome-info">
-              Also you need to hire for <span className="highlight">Developer, ReactJS Developer</span>.
+              Also you need to hire for{" "}
+              <span className="highlight">Developer, ReactJS Developer</span>.
             </p>
           </div>
           <div className="welcome-illustration">
@@ -57,4 +93,3 @@ const Header = () => {
 };
 
 export default Header;
-
