@@ -1,0 +1,18 @@
+/* Self Study Container */
+.self-study-container {
+  max-width: 1200px;
+  margin-left: 240px;
+  width: calc(100% - 240px);
+  padding: 0px 20px;
+}
+
+/* Form Select Styling */
+.form-input select,
+select.form-input {
+  background: white;
+  cursor: pointer;
+}
+
+select.form-input option {
+  padding: 8px;
+}

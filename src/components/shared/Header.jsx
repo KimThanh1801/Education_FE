@@ -121,8 +121,6 @@ const Header = () => {
         .join("")
         .toUpperCase()
     : "??";
-
-  // ✅ Handler điều hướng đến trang profile
   const goToProfile = () => {
     navigate("/profile");
   };
