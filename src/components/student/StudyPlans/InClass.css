@@ -1,0 +1,632 @@
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+}
+.study-plan-container-inclass {
+  max-width: 1200px;
+  margin-left: 240px !important;
+  width: calc(100% - 240px);
+  padding: 0px 20px;
+}
+
+/* Tab Buttons */
+.tab-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.tab-button:hover {
+  background: #f9fafb;
+}
+
+.tab-button.active {
+  background: #22BBEA;
+  color: white;
+  border-color: #22BBEA;
+}
+
+/* Cards */
+.goals-card, .table-card, .add-form-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 24px 24px 0 24px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #1f2937;
+}
+
+.card-header p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.card-content {
+  padding: 0 24px 24px 24px;
+}
+
+/* Goals Section */
+.goal-input-section {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.goal-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.goal-input:focus {
+  outline: none;
+  border-color: #22BBEA;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.add-goal-btn {
+  padding: 8px 16px;
+  background: #22BBEA;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.add-goal-btn:hover {
+  background: #2563eb;
+}
+
+.goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.goal-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.goal-checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+.goal-label {
+  flex: 1;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.goal-label.completed {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+.completed-badge {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+/* Add New Button */
+.add-new-btn {
+    padding: 8px 16px;
+    background: #22BBEA;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s;
+    height: 40px;
+}
+
+.add-new-btn:hover {
+  background:#22BBEA;
+}
+
+/* Form */
+.form-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.form-header h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.form-content {
+  padding: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.form-input, .form-textarea {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.save-btn {
+  padding: 8px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.save-btn:hover {
+  background: #2563eb;
+}
+
+.cancel-btn {
+  padding: 8px 16px;
+  background: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+  background: #f9fafb;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+  padding: 0 24px 24px 24px;
+}
+
+.study-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.study-table th {
+background-color: rgba(255, 153, 51, 0.8);
+  padding: 12px 8px;
+  text-align: center;
+  font-weight: 600;
+  color:#fff;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+  font-size: 15px;
+
+}
+
+.study-table td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: top;
+}
+
+.study-table tr:hover {
+  background: #f9fafb;
+}
+
+.date-cell {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.skill-badge {
+  background: #f0f9ff;
+  color: #0369a1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.lesson-cell, .text-cell {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lesson-cell {
+  max-width: 250px;
+}
+
+/* Action Buttons */
+.actions-cell {
+  white-space: nowrap;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+}
+
+.history-btn:hover {
+  background: #dbeafe;
+  transform: scale(1.1);
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+  transform: scale(1.1);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.history-item {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+  border-left: 4px solid #3b82f6;
+}
+
+.history-item strong {
+  color: #374151;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.history-item:last-child {
+  margin-bottom: 0;
+}
+
+.inline-input {
+  width: 100%;
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
+  min-width: 120px;
+}
+
+.inline-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.inline-textarea {
+  width: 100%;
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
+  min-height: 32px;
+  height: 32px;
+  min-width: 150px;
+  resize: none;
+  overflow: hidden;
+}
+
+.inline-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.inline-select {
+  width: 100%;
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
+  background: white;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.inline-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.save-btn-inline {
+  background: #dcfce7 !important;
+  color: #166534;
+}
+
+.save-btn-inline:hover {
+  background: #bbf7d0 !important;
+  transform: scale(1.1);
+}
+
+.cancel-btn-inline {
+  background: #fee2e2 !important;
+  color: #dc2626;
+}
+
+.cancel-btn-inline:hover {
+  background: #fecaca !important;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .study-plan-container-inclass {
+    padding: 16px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .goal-input-section {
+    flex-direction: column;
+  }
+  
+  .form-buttons {
+    flex-direction: column;
+  }
+  
+  .study-table {
+    font-size: 12px;
+  }
+  
+  .study-table th,
+  .study-table td {
+    padding: 8px 4px;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .action-buttons {
+    gap: 4px;
+  }
+  
+  .action-btn {
+    min-width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  /* Responsive adjustments for inline editing */
+  .inline-input {
+    min-width: 80px;
+    font-size: 11px;
+  }
+  
+  .inline-textarea {
+    min-width: 100px;
+    min-height: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+  
+  .inline-select {
+    min-width: 80px;
+    font-size: 11px;
+  }
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.status-completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-progress {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-planned {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-hold {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.status-default {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+
+.self-study-container {
+  width: 100%;
+}
+
+.form-input select,
+select.form-input {
+  background: white;
+  cursor: pointer;
+}
+
+select.form-input option {
+  padding: 8px;
+}
+
+.study-table input,
+.study-table textarea,
+.study-table select {
+  box-sizing: border-box;
+  padding: 8px;
+  font-size: 14px;
+  resize: none;
+}
+
+.study-table tr.input-row td {
+  height: 100px;
+}

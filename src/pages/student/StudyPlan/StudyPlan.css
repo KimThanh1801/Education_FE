@@ -1,0 +1,32 @@
+.tab-buttons {
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 240px;
+    padding: 0px 20px;
+}
+
+.goals-card-study-plan {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    margin-left: 260px;
+    max-width: 1200px;
+    width: calc(100% - 260px);
+}
+
+.tab-button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.tab-button.active {
+    background-color: #22BBEA;
+    color: white;
+}

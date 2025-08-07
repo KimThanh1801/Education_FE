@@ -56,6 +56,23 @@ export const getStudents = async () => {
   }
 };
 
+export const updateAvatarStudent = async (file) => {
+  const formData = new FormData();
+  formData.append("image", file); // "image" phải khớp với backend request->file('image')
+
+  try {
+    const response = await api.post("/v1/avatar", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    return response.data.image_url; // Vì bạn trả về image_url trong response JSON
+  } catch (error) {
+    console.error("Failed to upload avatar", error);
+    throw error;
+  }
+};
+
 export const createClass = async (data) => {
   try {
     const formData = new FormData();
