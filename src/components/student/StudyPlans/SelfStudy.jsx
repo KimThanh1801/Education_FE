@@ -411,12 +411,12 @@ const SelfStudy = () => {
                         >
                           <FaTrash style={{ color: "#ff4d4f" }} />
                         </button>
-<button
-  className="action-btn help-btn"
-  title="Ask Teacher for Help"
->
-  <FaHandPaper style={{ color: "#1890ff" }} />
-</button>
+                        <button
+                          className="action-btn help-btn"
+                          title="Ask Teacher for Help"
+                        >
+                          <FaHandPaper style={{ color: "#1890ff" }} />
+                        </button>
                       </div>
                     )}
                   </td>
