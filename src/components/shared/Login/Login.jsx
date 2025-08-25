@@ -1,3 +1,5 @@
+// src/components/shared/Login/Login.jsx
+
 import React, { useState } from 'react';
 import './Login.css';
 import { useAuth } from '../../../services/providers/AuthContext';
@@ -5,10 +7,11 @@ import { useNavigate } from 'react-router-dom';
 import { loginImage } from '../../../assets';
 import { login } from '../../../services/api/StudentAPI';
 import { toast } from 'react-toastify';
+import { saveUser } from '../../../services/auth/authService';
+
 function Login() {
   const { setUser } = useAuth();
   const navigate = useNavigate();
-
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,16 +20,21 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await login({email, password});
+      const response = await login({ email, password });
       const data = response.data;
-      console.log("Data: ", data);
-      if(data) {
-        setUser({
+
+   console.log("✅ Login API raw response:", response);
+console.log("✅ Login API data:", data);
+
+      if (data) {
+        const userData = {
+          id: data.user_id,
           username: data.username,
           role: data.role,
           token: data.access_token,
-          user_id: data.user_id
-        });
+        };
+        saveUser(userData);
+        setUser(userData);
 
         toast.success("Login successful!", {
           position: "top-right",
@@ -36,11 +44,11 @@ function Login() {
         navigate('/');
       }
     } catch (error) {
-      console.error("Login Error: ", error);
+      console.error("❌ Login error:", error);
       toast.error("Invalid credentials.", {
         position: "top-right",
-        autoClose: 2000
-      })
+        autoClose: 2000,
+      });
     }
   };
 
@@ -69,6 +77,10 @@ function Login() {
 
           <button type="submit">Login</button>
         </form>
+
+        <p className="helper">
+          Don't have an account? <a href="/signup">Sign up</a>
+        </p>
       </div>
 
       <div className="login-image">

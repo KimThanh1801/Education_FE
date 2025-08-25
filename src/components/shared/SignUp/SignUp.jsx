@@ -1,128 +1,153 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import "./SignUp.css";
 import { loginImage } from "../../../assets";
+import { register } from "../../../services/api/StudentAPI";
+
 export default function SignUp() {
-  const [showPw, setShowPw] = useState(false)
-  const [showPw2, setShowPw2] = useState(false)
-  const [accept, setAccept] = useState(false)
-  const [errors, setErrors] = useState({ password: "", terms: "" })
+  const [showPw, setShowPw] = useState(false);
+  const [showPw2, setShowPw2] = useState(false);
+  const [accept, setAccept] = useState(false);
+  const [errors, setErrors] = useState({ password: "", terms: "" });
 
-  function onSubmit(e) {
-    e.preventDefault()
-    const fd = new FormData(e.currentTarget)
-    const name = String(fd.get("name") || "")
-    const email = String(fd.get("email") || "")
-    const password = String(fd.get("password") || "")
-    const confirm = String(fd.get("confirm") || "")
+  async function onSubmit(e) {
+    e.preventDefault();
 
-    const next = { password: "", terms: "" }
-    if (password !== confirm) next.password = "Mật khẩu không khớp"
-    if (!accept) next.terms = "Bạn cần đồng ý với Điều khoản"
+    const form = e.currentTarget;
 
-    setErrors(next)
-    if (next.password || next.terms) return
+    const fd = new FormData(form);
+    const name = String(fd.get("name") || "");
+    const email = String(fd.get("email") || "");
+    const password = String(fd.get("password") || "");
+    const confirm = String(fd.get("confirm") || "");
 
-    // Demo: báo thành công
-    alert(`Tạo tài khoản thành công cho: ${name || email}`)
-    e.currentTarget.reset()
-    setAccept(false)
+    const next = { password: "", terms: "" };
+    if (password !== confirm) next.password = "Passwords do not match";
+    if (!accept) next.terms = "You must agree to the Terms";
+
+    setErrors(next);
+    if (next.password || next.terms) return;
+
+    const data = { name, email, password, confirm_password: confirm };
+
+    try {
+      const response = await register(data);
+      console.log("✅ Register success:", response);
+
+      alert("Account created successfully!");
+      form.reset();
+      setAccept(false);
+      setErrors({ password: "", terms: "" });
+      window.location.href = "/login";
+    } catch (error) {
+      console.log("❌ Register error:", error);
+
+      const resErrors = error.response?.data?.errors || {};
+      if (resErrors.password) {
+        setErrors((prev) => ({ ...prev, password: resErrors.password[0] }));
+      }
+      if (resErrors.email) {
+        alert(resErrors.email[0] || "Email already exists or is invalid.");
+      } else {
+        alert("Registration failed. Please try again.");
+      }
+    }
   }
 
   return (
     <section className="auth-card" aria-labelledby="signup-title">
-     <div className="logout-box-form">
-         <h1 id="signup-title" className="auth-title">Đăng ký</h1>
-      <p className="auth-subtitle">Tạo tài khoản mới để bắt đầu sử dụng</p>
+      <div className="logout-box-form">
+        <h1 id="signup-title" className="auth-title">Sign Up</h1>
+        <p className="auth-subtitle">Create a new account to get started</p>
 
-      <form className="auth-form" onSubmit={onSubmit} noValidate>
-        <div className="field">
-          <label htmlFor="name" className="label-sign-up">Họ và tên</label>
-          <input id="name" name="name" className="input" placeholder="Nguyễn Văn A" />
-        </div>
-
-        <div className="field">
-          <p htmlFor="email" className="label-sign-up">Địa chỉ email</p>
-          <input id="email" name="email" type="email" required className="input" placeholder="ban@example.com" />
-        </div>
-
-        <div className="field">
-          <label htmlFor="password" className="label-sign-up">Mật khẩu</label>
-          <div className="password-wrap">
-            <input
-              id="password"
-              name="password"
-              type={showPw ? "text" : "password"}
-              required
-              className="input"
-              placeholder="••••••••"
-              aria-invalid={Boolean(errors.password)}
-              aria-describedby={errors.password ? "pw-error" : undefined}
-            />
-            <button
-              type="button"
-              className="toggle-visibility"
-              onClick={() => setShowPw((v) => !v)}
-              aria-label={showPw ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
-            >
-              {showPw ? "Ẩn" : "Hiện"}
-            </button>
+        <form className="auth-form" onSubmit={onSubmit} noValidate>
+          <div className="field">
+            <label htmlFor="name" className="label-sign-up">Full Name</label>
+            <input id="name" name="name" className="input" placeholder="John Doe" />
           </div>
-        </div>
 
-        <div className="field">
-          <label htmlFor="confirm" className="label-sign-up">Xác nhận mật khẩu</label>
-          <div className="password-wrap">
-            <input
-              id="confirm"
-              name="confirm"
-              type={showPw2 ? "text" : "password"}
-              required
-              className="input"
-              placeholder="••••••••"
-              aria-invalid={Boolean(errors.password)}
-              aria-describedby={errors.password ? "pw-error" : undefined}
-            />
-            <button
-              type="button"
-              className="toggle-visibility"
-              onClick={() => setShowPw2((v) => !v)}
-              aria-label={showPw2 ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
-            >
-              {showPw2 ? "Ẩn" : "Hiện"}
-            </button>
+          <div className="field">
+            <label htmlFor="email" className="label-sign-up">Email Address</label>
+            <input id="email" name="email" type="email" required className="input" placeholder="you@example.com" />
           </div>
-          {errors.password ? (
-            <p id="pw-error" className="error">{errors.password}</p>
-          ) : null}
-        </div>
 
-        <div className="terms">
-          <input
-            id="terms"
-            type="checkbox"
-            checked={accept}
-            onChange={(e) => setAccept(e.target.checked)}
-          />
-          <p htmlFor="terms">
-            Tôi đồng ý với <a href="#" onClick={(e) => e.preventDefault()}>Điều khoản</a> và{" "}
-            <a href="#" onClick={(e) => e.preventDefault()}>Chính sách bảo mật</a>.
+          <div className="field">
+            <label htmlFor="password" className="label-sign-up">Password</label>
+            <div className="password-wrap">
+              <input
+                id="password"
+                name="password"
+                type={showPw ? "text" : "password"}
+                required
+                className="input"
+                placeholder="••••••••"
+                aria-invalid={Boolean(errors.password)}
+                aria-describedby={errors.password ? "pw-error" : undefined}
+              />
+              <button
+                type="button"
+                className="toggle-visibility"
+                onClick={() => setShowPw((v) => !v)}
+                aria-label={showPw ? "Hide password" : "Show password"}
+              >
+                {showPw ? "Hide" : "Show"}
+              </button>
+            </div>
+          </div>
+
+          <div className="field">
+            <label htmlFor="confirm" className="label-sign-up">Confirm Password</label>
+            <div className="password-wrap">
+              <input
+                id="confirm"
+                name="confirm"
+                type={showPw2 ? "text" : "password"}
+                required
+                className="input"
+                placeholder="••••••••"
+                aria-invalid={Boolean(errors.password)}
+                aria-describedby={errors.password ? "pw-error" : undefined}
+              />
+              <button
+                type="button"
+                className="toggle-visibility"
+                onClick={() => setShowPw2((v) => !v)}
+                aria-label={showPw2 ? "Hide password" : "Show password"}
+              >
+                {showPw2 ? "Hide" : "Show"}
+              </button>
+            </div>
+            {errors.password && (
+              <p id="pw-error" className="error">{errors.password}</p>
+            )}
+          </div>
+
+          <div className="terms">
+            <input
+              id="terms"
+              type="checkbox"
+              checked={accept}
+              onChange={(e) => setAccept(e.target.checked)}
+            />
+            <p htmlFor="terms">
+              I agree to the <a href="#" onClick={(e) => e.preventDefault()}>Terms</a> and{" "}
+              <a href="#" onClick={(e) => e.preventDefault()}>Privacy Policy</a>.
+            </p>
+          </div>
+          {errors.terms && <p className="error">{errors.terms}</p>}
+
+          <div className="actions-button">
+            <button type="submit" className="submit">Create Account</button>
+          </div>
+
+          <p className="helper">
+            Already have an account? <a href="/login">Log in</a>
           </p>
-        </div>
-        {errors.terms ? <p className="error">{errors.terms}</p> : null}
-
-        <div className="actions-button">
-          <button type="submit" className="submit">Tạo tài khoản</button>
-        </div>
-
-        <p className="helper">
-          Đã có tài khoản? <a href="/login">Đăng nhập</a>
-        </p>
-      </form>
-     </div>
+        </form>
+      </div>
 
       <div className="login-image">
         <img src={loginImage} alt="Login illustration" />
       </div>
     </section>
-  )
+  );
 }
