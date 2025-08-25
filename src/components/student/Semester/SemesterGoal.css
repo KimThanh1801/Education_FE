@@ -1,8 +1,7 @@
 .study-goal-container {
-    margin-left: 240px;
+  margin-left: 240px;
     padding: 0px 20px;
-    width: calc(100% - 240px);
-    box-sizing: border-box;
+    max-width: 1200px;
 }
 
 .study-goal-header {
@@ -52,15 +51,25 @@
   background-color: rgba(255, 153, 51, 0.8);
 }
 
+
+.study-goal-container {
+  margin-left: 240px;
+  max-width: 1200px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+
 .study-goal-table {
-  width: 100%;
   border-collapse: collapse;
   background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 20px;
 }
+
 
 .study-goal-table th {
   background-color: rgba(255, 153, 51, 0.8);
@@ -339,4 +348,75 @@
   .study-goal-table {
     min-width: 700px;
   }
+}
+
+.add-semester-btn {
+  background-color: #ff9800; /* màu cam nổi bật */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.add-semester-btn:hover {
+  background-color: #e68900;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.semester-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+.dropdown-btn {
+  width: 100%;
+  padding: 8px 12px;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.semester-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.semester-item:hover {
+  background-color: #f0f0f0;
+}
+
+.delete-semester-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.semester-item:hover .delete-semester-btn {
+  display: inline-block;
+  color: red;
 }

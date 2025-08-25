@@ -6,6 +6,8 @@ import { api } from "../../utils/constants";
 export const login = (credentials) => api.post("/v1/login", credentials);
 export const logout = () => api.post("/v1/logout");
 export const profile = () => api.get("/profile");
+export const register = (data) => api.post("v1/register", data);
+
 
 // =========================
 // 👨‍🎓 Student APIs
@@ -25,6 +27,7 @@ export const getClasses = async () => {
     return [];
   }
 };
+
 
 export const getNameOfTeachers = async () => {
   try {
@@ -389,5 +392,35 @@ export const deleteStudent = async (id) => {
       throw error;
   }
 }
+
+// Semester Goal
+export const getAllSemesterGoal = async () => {
+  try {
+    const response = await api.get(`/semesters`);
+    return response.data;
+  } catch (error) {
+    handleApiError(error);
+    throw error;
+  }
+};
+
+export const createSemester = async (data) => {
+  try {
+    const response = await api.post(`/semesters/store`, data);
+    return response.data;
+  } catch (error) {
+    console.error("Failed to create self study:", error);
+    throw error;
+  }
+};
+export const deleteSemester = async (id) => {
+  try {
+    const response = await api.delete(`/semesters/${id}`); // <-- sửa chỗ này
+    return response.data;
+  } catch (error) {
+    console.error("Failed to delete semester", error);
+    throw error;
+  }
+};
 
 export default academyAPI;
