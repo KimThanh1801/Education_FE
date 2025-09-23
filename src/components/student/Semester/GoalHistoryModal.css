@@ -1,0 +1,252 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 12px;
+  width: 800px;
+  max-width: 100%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.modal-header-goals {
+  background-color: #22BBEA;
+  color: #fff;
+  padding: 10px 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.modal-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.modal-header p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.goal-card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Course row */
+.course-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-left span {
+  font-weight: 600;
+}
+
+.course-date {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+/* Goal item */
+.goal-item-goals {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.goal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+.goal-title-course{
+  text-align: left;
+  font-size: 15px;
+}
+.goal-content {
+  margin-left: 24px;
+  font-size: 14px;
+}
+
+/* Expectations row */
+.goal-expectations {
+  display: flex;
+  gap: 30px;
+}
+
+.goal-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  text-align: left;
+}
+.goal-expectations .goal-item-goals {
+  flex: 1;
+}
+
+
+.course-row {
+  display: flex;
+  justify-content: space-between; /* trái - phải */
+  align-items: flex-start;        /* để nút không đẩy lệch */
+}
+
+.course-left {
+  display: flex;
+  flex-direction: column; /* để course-title và course-date xếp dọc */
+}
+
+.course-title {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* khoảng cách icon với text */
+  font-weight: 600;
+}
+
+.course-date {
+  font-size: 13px;
+  color: #6c757d;
+  margin-left: 24px; /* thụt so với icon */
+  margin-top: 2px;
+}
+
+.status-btn {
+  background-color: #0f5132;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.action-buttons button {
+  background-color: transparent;
+  /* các style khác */
+}
+
+.btn-primary {
+  background-color: #198754 !important; 
+  color: white;
+}
+
+
+/* Overlay nền mờ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* mờ nền */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Nội dung modal */
+.modal-content {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* shadow */
+  position: relative;
+}
+
+/* Card mỗi mục tiêu */
+.goal-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* shadow nhẹ cho card */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.goal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Nút đóng */
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #ff4d4f;
+}
+
+/* Spinner */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 12px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.goal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.goal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
