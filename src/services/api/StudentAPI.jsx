@@ -61,7 +61,7 @@ export const getStudents = async () => {
 
 export const updateAvatarStudent = async (file) => {
   const formData = new FormData();
-  formData.append("image", file); // "image" phải khớp với backend request->file('image')
+  formData.append("image", file);
 
   try {
     const response = await api.post("/v1/avatar", formData, {
@@ -192,9 +192,16 @@ export const getGoalsByStatus = async (status) => {
   }
 };
 
+
 // =========================
 // 🏫 In-Class Management
 // =========================
+
+export const createInClass = async (payload) => {
+  const response = await api.post("/inclass/create/", payload);
+  return response.data;
+};
+
 export const getAllInClass = async () => {
   try {
     const response = await api.get(`/inclass`);
@@ -421,6 +428,45 @@ export const deleteSemester = async (id) => {
     console.error("Failed to delete semester", error);
     throw error;
   }
+};
+
+//GoalHistory
+export const createGoalHistory = async (goalId, action) => {
+  const response = await api.post(`/goal-history`, { goal_id: goalId, action });
+  return response.data;
+};
+
+
+export const getGoalHistory = async (goalId) => {
+  try {
+    const response = await api.get(`/goal-history/${goalId}`);
+    return response.data;
+  } catch (error) {
+    console.error("getGoalHistory API error:", error);
+    throw error;
+  }
+};
+
+export const getGoalWithHistory = async (goalId) => {
+  try {
+    const response = await api.get(`/goal-history-with-goal/${goalId}`);
+    return response.data; // { goal, history }
+  } catch (error) {
+    console.error("getGoalWithHistory API error:", error);
+    throw error;
+  }
+};
+
+// Student Profile
+export const updateStudent = async (id, data) => {
+  const res = await api.put(`/students/${id}`, data);
+  return res.data;
+};
+
+// StudentAPI.jsx
+export const getUserGoals = async (userId) => {
+  const response = await api.get(`/users/${userId}/goals`);
+  return response.data;
 };
 
 export default academyAPI;

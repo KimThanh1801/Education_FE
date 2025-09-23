@@ -30,6 +30,7 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 20px;
+    padding: 24px 0px 0px 0px;
 }
 
 .subject-info {
@@ -179,7 +180,7 @@
 }
 
 @media (max-width: 480px) {
-    .card-header {
+    .card-headers {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
@@ -233,4 +234,64 @@
 
 .subject-card:hover .progress-bar-fill {
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+/* SubjectCards.css */
+.subject-card {
+  position: relative;
+  padding: 16px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.subject-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Nút 3 chấm */
+.ellipsis-menu {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  display: none;
+}
+
+.subject-card:hover .ellipsis-menu {
+  display: block;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 36px;
+  right: 12px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: none;
+  min-width: 120px;
+  z-index: 10;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f3f3f3;
+}
+/* Chỉ cần dùng lại CSS cũ, thêm màu cho kho lưu trữ */
+.status-badge.archived {
+  background-color: #9ca3af;
+  color: #fff;
 }
